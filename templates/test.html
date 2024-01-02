@@ -1,0 +1,201 @@
+{%load static%}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'CSS/test.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/fonts.css' %}">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #EDEEF2;
+            box-sizing: border-box;
+            position: relative;
+        }
+    </style>
+
+    <!-- MATH JAX -->
+    <script type="text/javascript" async
+        src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-MML-AM_CHTML">
+    </script>
+    <script type="text/x-mathjax-config">
+        MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']],
+            displayMath: [['$$', '$$'], ['\\[', '\\]']],
+        }
+        });
+    </script>
+    
+</head>
+<body>
+    <div class="top">
+        <a href="">3Tstudy</a>
+        <div>
+            <a id="a1" href="">Login</a>
+            <a id="a2" href="">Sign Up</a>
+        </div>
+    </div>
+
+    <div class="main" onclick="Close_table_qus(); Close_pop_btn()">
+        <div-1>
+            <header>Đề kiểm tra Toán 10 - HK1 - Cánh Diều</header>
+            <span-1></span-1>
+        </div-1>
+
+        <div class="question">
+            <div class="ques">Câu 1:  Đâu là hằng đẳng thức ?</div>
+            <form class="ans">
+                <label class="abcd" name="qusb1A" id="1234">
+                    <input type="radio" class="answ" name="qus1" value="A">
+                    <div class="checkk" >A</div>
+                    <span> $$ (a * b) $$ </span>
+                </label>
+                
+                <label class="abcd" name="qusb1B">
+                    <input type="radio" class="answ" name="qus1" value="B">
+                    <div class="checkk" >B</div>
+                    <span> $$a^{2}\, + \, b^{2}$$ </span>
+                </label>
+
+                <label class="abcd" name="qusb1C">
+                    <input type="radio" class="answ" name="qus1" value="C">
+                    <div class="checkk" >C</div>
+                    <span> $$a\, + \, b^{2}$$ </span>
+                </label>
+
+                <label class="abcd" name="qusb1D">
+                    <input type="radio" class="answ" name="qus1" value="D">
+                    <div class="checkk" >D</div>
+                    <span> $$ (a+b)^{2}$$</span>
+                </label>
+            </form>
+
+            <div class="ques">Câu 2:  Cho khối cầu có bán kính $r = 4$. Thể tích của khối cầu đã cho bằng?</div>
+            <form class="ans">
+                <label class="abcd" name="qusb2A">
+                    <input type="radio" class="answ" name="qus2" value="A">
+                    <div class="checkk" >A</div>
+                    <span>$$ \frac{256\pi}{3} $$</span>
+                </label>
+
+                <label class="abcd" name="qusb2B">
+                    <input type="radio" class="answ" name="qus2" value="B">
+                    <div class="checkk" >B</div>
+                    <span>$$ 64\pi $$</span>
+                </label>
+
+                <label class="abcd" name="qusb2C">
+                    <input type="radio" class="answ" name="qus2" value="C">
+                    <div class="checkk" >C</div>
+                    <span>$$ \frac{64\pi}{3} $$</span>
+                </label>
+
+                <label class="abcd" name="qusb2D">
+                    <input type="radio" class="answ" name="qus2" value="D">
+                    <div class="checkk" >D</div>
+                    <span>$$ 256\pi $$</span>
+                </label>
+            </form>
+
+            <div class="ques">Câu 3:  Trong không gian $Oxyz$, cho mặt cầu $(S):x^{2} + y^{2} + (z + 2)^{2} = 9$. Bán kính của $(S)$ bằng?</div>
+            <form class="ans">
+                <label class="abcd" name="qusb3A">
+                    <input type="radio" class="answ" name="qus3" value="A">
+                    <div class="checkk" >A</div>
+                    <span>$$6$$</span>
+                </label>
+                
+                <label class="abcd" name="qusb3B">
+                    <input type="radio" class="answ" name="qus3" value="B">
+                    <div class="checkk" >B</div>
+                    <span> $$18$$ </span>
+                </label>
+
+                <label class="abcd" name="qusb3C">
+                    <input type="radio" class="answ" name="qus3" value="C">
+                    <div class="checkk" >C</div>
+                    <span> $$9$$ </span>
+                </label>
+
+                <label class="abcd" name="qusb3D">
+                    <input type="radio" class="answ" name="qus3" value="D">
+                    <div class="checkk" >D</div>
+                    <span> $$3$$</span>
+                </label>
+            </form>
+        </div>
+    </div>   
+
+    <div class="submit">
+        
+        <button class="table" onclick="Open_table_qus()">Bảng câu hỏi</button>
+
+        <div id="bg-qus">
+            <div class="pop-qus" id="container">
+                <div class="close-btn" onclick="Close_table_qus()">x</div>
+            </div>
+        </div>
+
+        <div id="bg-sub">
+            <div class="pop-sub">
+                <span>Bạn chắc chắn nạp bài ?</span>
+                <div class="pop-sub-btn">
+                    <button class="button" id="pop-sub-btn-2" onclick="Close_table_qus(); Close_pop_btn()">Hủy</button>
+                    <button class="button" id="pop-sub-btn-1" onclick="Close_table_qus(); Close_pop_btn(); CheckAnswers(); Open_pop_result(); stopTimer(); displayTimeResult()">Xác nhận</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="sub">
+            <div class="countdown">
+                <img src="{% static 'IMG/test/countdown.png' %}" alt="">
+                <p id="time"></p>
+            </div>
+            <button class="sub-btn" onclick="Open_table_qus(); Open_pop_btn()">
+                Nộp bài
+            </button>
+        </div>        
+
+    </div>
+
+    <div id="bg-result">
+        <div class="pop-result">
+            <div-0 onclick="Close_pop_result()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="33" height="33" viewBox="0 0 33 34" fill="none">
+                    <ellipse cx="16.5" cy="17" rx="16.5" ry="17" fill="#FFF"/>
+                    <circle cx="16.5" cy="16.5" r="10.5" fill="#466991"/>
+                    <path d="M20.8007 12.2062C20.7375 12.1429 20.6625 12.0927 20.5799 12.0584C20.4973 12.0242 20.4088 12.0065 20.3194 12.0065C20.23 12.0065 20.1415 12.0242 20.0589 12.0584C19.9763 12.0927 19.9013 12.1429 19.8381 12.2062L16.5 15.5375L13.1619 12.1993C13.0987 12.1361 13.0236 12.086 12.9411 12.0518C12.8585 12.0176 12.77 12 12.6806 12C12.5912 12 12.5027 12.0176 12.4202 12.0518C12.3376 12.086 12.2625 12.1361 12.1993 12.1993C12.1361 12.2625 12.086 12.3376 12.0518 12.4202C12.0176 12.5027 12 12.5912 12 12.6806C12 12.77 12.0176 12.8585 12.0518 12.9411C12.086 13.0236 12.1361 13.0987 12.1993 13.1619L15.5375 16.5L12.1993 19.8381C12.1361 19.9013 12.086 19.9764 12.0518 20.0589C12.0176 20.1415 12 20.23 12 20.3194C12 20.4088 12.0176 20.4973 12.0518 20.5798C12.086 20.6624 12.1361 20.7375 12.1993 20.8007C12.2625 20.8639 12.3376 20.914 12.4202 20.9482C12.5027 20.9824 12.5912 21 12.6806 21C12.77 21 12.8585 20.9824 12.9411 20.9482C13.0236 20.914 13.0987 20.8639 13.1619 20.8007L16.5 17.4625L19.8381 20.8007C19.9013 20.8639 19.9764 20.914 20.0589 20.9482C20.1415 20.9824 20.23 21 20.3194 21C20.4088 21 20.4973 20.9824 20.5798 20.9482C20.6624 20.914 20.7375 20.8639 20.8007 20.8007C20.8639 20.7375 20.914 20.6624 20.9482 20.5798C20.9824 20.4973 21 20.4088 21 20.3194C21 20.23 20.9824 20.1415 20.9482 20.0589C20.914 19.9764 20.8639 19.9013 20.8007 19.8381L17.4625 16.5L20.8007 13.1619C21.0601 12.9025 21.0601 12.4656 20.8007 12.2062Z" fill="white"/>
+                </svg>
+            </div-0>
+
+            <header id="header">Bài kiểm tra cuối học kì I - lớp 11</header>
+            <div id="point">
+                <img  src="{% static 'IMG/test/point.png' %}" alt="">
+                <div id="p_point"></div>
+            </div>
+            <div-1 id="time_results">
+                <img src="{% static 'IMG/test/time.png' %}" style="width: 25px; height: 25px;" alt="">
+                <p id="time_result"></p>
+            </div-1>
+            <div-2 id="ans_result">
+                <img src="{% static 'IMG/test/ans.png' %}" style="width: 25px; height: 27px;" alt="">
+                <p id="result"></p>
+            </div-2>
+
+            <div-3 id="button_result">
+                <a href= "{% url 'test' %}" ><button class="button">Làm lại</button></a>
+                <button class="button" onclick="Close_pop_result()">Xem bài</button>
+            </div-3>
+        </div>
+    </div>
+
+    <script src="{% static 'JS/test.js' %}"></script>
+
+    <div class="about-bot">Dự Án thi Tin học Trẻ 2023</div>
+</body>
+</html>
