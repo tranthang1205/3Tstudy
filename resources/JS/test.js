@@ -89,9 +89,22 @@ function customRoundToTwoDecimals(number) {
   return roundedNumber;
 }
 
+function generateRandomArray() {
+  var characters = ['A', 'B', 'C', 'D'];
+  var randomArray = [];
+
+  for (var i = 0; i < 50; i++) {
+      var randomIndex = Math.floor(Math.random() * characters.length);
+      randomArray.push(characters[randomIndex]);
+  }
+
+  return randomArray;
+}
+
+
 // check answers
 function CheckAnswers() {
-  var correctAnswers = ["A", "B", "C"];
+  var correctAnswers = generateRandomArray();
   var score = 0;
   // disable radio button after submit
   var radioButtons = document.querySelectorAll('input[class="answ"]');
@@ -106,6 +119,8 @@ function CheckAnswers() {
     // if userAnswer === null
     if(!userAnswer) {
       var correct_ans = document.querySelector('label[name="qusb' + i + correctAnswers[i-1] + '"]');
+      console.log(correct_ans)
+
       correct_ans.classList.add('correct');
       continue;
     }
@@ -124,7 +139,7 @@ function CheckAnswers() {
     }
   }
 
-  // score
+  score
   document.getElementById('result').innerHTML = "Đáp án đúng: " + score + "/" + num_ans;
 
   let x = document.getElementById('p_point')

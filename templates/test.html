@@ -1,4 +1,4 @@
-{%load static%}
+{% load static %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -6,8 +6,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="{% static 'CSS/test.css' %}">
-    <link rel="stylesheet" href="{% static 'CSS/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/test.css'%}">
+    <link rel="stylesheet" href="{% static 'CSS/fonts.css'%}">
     <style>
         body{
             margin: 0;
@@ -30,7 +30,6 @@
         }
         });
     </script>
-    
 </head>
 <body>
     <div class="top">
@@ -48,86 +47,34 @@
         </div-1>
 
         <div class="question">
-            <div class="ques">Câu 1:  Đâu là hằng đẳng thức ?</div>
+            {% for row in data %}
+            <div class="ques"> Câu {{forloop.counter}}: {{ row.Question }}</div>
             <form class="ans">
-                <label class="abcd" name="qusb1A" id="1234">
-                    <input type="radio" class="answ" name="qus1" value="A">
+                <label class="abcd" name="qusb{{forloop.counter}}A">
+                    <input type="radio" class="answ" name="qus{{forloop.counter}}" value="A">
                     <div class="checkk" >A</div>
-                    <span> $$ (a * b) $$ </span>
+                    <span>{{ row.Choice_A }}</span>
                 </label>
                 
-                <label class="abcd" name="qusb1B">
-                    <input type="radio" class="answ" name="qus1" value="B">
+                <label class="abcd" name="qusb{{forloop.counter}}B">
+                    <input type="radio" class="answ" name="qus{{forloop.counter}}" value="B">
                     <div class="checkk" >B</div>
-                    <span> $$a^{2}\, + \, b^{2}$$ </span>
+                    <span>{{ row.Choice_B }}</span>
                 </label>
 
-                <label class="abcd" name="qusb1C">
-                    <input type="radio" class="answ" name="qus1" value="C">
+                <label class="abcd" name="qusb{{forloop.counter}}C">
+                    <input type="radio" class="answ" name="qus{{forloop.counter}}" value="C">
                     <div class="checkk" >C</div>
-                    <span> $$a\, + \, b^{2}$$ </span>
+                    <span>{{ row.Choice_C }}</span>
                 </label>
 
-                <label class="abcd" name="qusb1D">
-                    <input type="radio" class="answ" name="qus1" value="D">
+                <label class="abcd" name="qusb{{forloop.counter}}D">
+                    <input type="radio" class="answ" name="qus{{forloop.counter}}" value="D">
                     <div class="checkk" >D</div>
-                    <span> $$ (a+b)^{2}$$</span>
+                    <span>{{ row.Choice_D }}</span>
                 </label>
             </form>
-
-            <div class="ques">Câu 2:  Cho khối cầu có bán kính $r = 4$. Thể tích của khối cầu đã cho bằng?</div>
-            <form class="ans">
-                <label class="abcd" name="qusb2A">
-                    <input type="radio" class="answ" name="qus2" value="A">
-                    <div class="checkk" >A</div>
-                    <span>$$ \frac{256\pi}{3} $$</span>
-                </label>
-
-                <label class="abcd" name="qusb2B">
-                    <input type="radio" class="answ" name="qus2" value="B">
-                    <div class="checkk" >B</div>
-                    <span>$$ 64\pi $$</span>
-                </label>
-
-                <label class="abcd" name="qusb2C">
-                    <input type="radio" class="answ" name="qus2" value="C">
-                    <div class="checkk" >C</div>
-                    <span>$$ \frac{64\pi}{3} $$</span>
-                </label>
-
-                <label class="abcd" name="qusb2D">
-                    <input type="radio" class="answ" name="qus2" value="D">
-                    <div class="checkk" >D</div>
-                    <span>$$ 256\pi $$</span>
-                </label>
-            </form>
-
-            <div class="ques">Câu 3:  Trong không gian $Oxyz$, cho mặt cầu $(S):x^{2} + y^{2} + (z + 2)^{2} = 9$. Bán kính của $(S)$ bằng?</div>
-            <form class="ans">
-                <label class="abcd" name="qusb3A">
-                    <input type="radio" class="answ" name="qus3" value="A">
-                    <div class="checkk" >A</div>
-                    <span>$$6$$</span>
-                </label>
-                
-                <label class="abcd" name="qusb3B">
-                    <input type="radio" class="answ" name="qus3" value="B">
-                    <div class="checkk" >B</div>
-                    <span> $$18$$ </span>
-                </label>
-
-                <label class="abcd" name="qusb3C">
-                    <input type="radio" class="answ" name="qus3" value="C">
-                    <div class="checkk" >C</div>
-                    <span> $$9$$ </span>
-                </label>
-
-                <label class="abcd" name="qusb3D">
-                    <input type="radio" class="answ" name="qus3" value="D">
-                    <div class="checkk" >D</div>
-                    <span> $$3$$</span>
-                </label>
-            </form>
+            {% endfor %}
         </div>
     </div>   
 
@@ -153,7 +100,7 @@
 
         <div class="sub">
             <div class="countdown">
-                <img src="{% static 'IMG/test/countdown.png' %}" alt="">
+                <img src="{% static 'IMG/test/countdown.png'%}" alt="">
                 <p id="time"></p>
             </div>
             <button class="sub-btn" onclick="Open_table_qus(); Open_pop_btn()">
@@ -175,27 +122,28 @@
 
             <header id="header">Bài kiểm tra cuối học kì I - lớp 11</header>
             <div id="point">
-                <img  src="{% static 'IMG/test/point.png' %}" alt="">
-                <div id="p_point"></div>
+                <img  src="{% static 'IMG/test/point.png'%}" alt="">
+                <div id="p_point">
+                </div>
             </div>
             <div-1 id="time_results">
-                <img src="{% static 'IMG/test/time.png' %}" style="width: 25px; height: 25px;" alt="">
+                <img src="{% static 'IMG/test/time.png'%}" style="width: 25px; height: 25px;" alt="">
                 <p id="time_result"></p>
             </div-1>
             <div-2 id="ans_result">
-                <img src="{% static 'IMG/test/ans.png' %}" style="width: 25px; height: 27px;" alt="">
+                <img src="{% static 'IMG/test/ans.png'%}" style="width: 25px; height: 27px;" alt="">
                 <p id="result"></p>
             </div-2>
 
             <div-3 id="button_result">
-                <a href= "{% url 'test' %}" ><button class="button">Làm lại</button></a>
+                <a href="{% url 'test' %}" ><button class="button">Làm lại</button></a>
                 <button class="button" onclick="Close_pop_result()">Xem bài</button>
             </div-3>
         </div>
     </div>
-
+    
     <script src="{% static 'JS/test.js' %}"></script>
-
     <div class="about-bot">Dự Án thi Tin học Trẻ 2023</div>
+
 </body>
 </html>
