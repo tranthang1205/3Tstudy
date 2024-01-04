@@ -104,7 +104,8 @@ function generateRandomArray() {
 
 // check answers
 function CheckAnswers() {
-  var correctAnswers = generateRandomArray();
+  // var correctAnswers = generateRandomArray();
+  var correctAnswers = ['B','A','B','C','B','C','B','A','B','A','B','B','B','C','B','A','B','B','C','A','C','B','A','B','B','B','D','D','A','A','B','A','C','C','B','B','A','B','A','A','C','C','C','A','A','D','D','C','A','B']
   var score = 0;
   // disable radio button after submit
   var radioButtons = document.querySelectorAll('input[class="answ"]');
