@@ -9,3 +9,18 @@ def test(request):
         'data': data_to_display,
         'correct_answers' : correct_answers,
     })
+
+def landing(request):
+    return render(request, template_name='landing.html')
+
+def library(request):
+    return render(request, template_name='library.html')
+
+def practice(request):
+    return render(request, template_name='practice.html')
+
+def result(request):
+    return render(request, template_name='result.html')
+
+def starttest(request):
+    return render(request, template_name='starttest.html')

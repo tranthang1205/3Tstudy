@@ -21,7 +21,7 @@ var x = setInterval(function() {
 function stopTimer() {
   clearInterval(counttime); // Dừng bộ đếm
   clearInterval(x);
-  document.getElementById("time_result").textContent = "Thời gian làm bài: " + hours + ":" + mins + ":" + seconds;
+  document.getElementById("time_result").textContent = "Thời gian làm bài: " + hours + "h:" + mins + "m:" + seconds + "s";
 }
 
 // create checkbox

@@ -1,0 +1,233 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luyện tập</title>
+    <link rel="stylesheet" href="{% static 'CSS/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/practice.css' %}">
+    <link rel="shortcut icon" href="{% static 'IMG/studying.png' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.x.x/css/swiper.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #EDEEF2;
+
+            display: flex;
+        }
+    </style>
+</head>
+<body>
+    <a href="{% url 'landing' %}" class="webname">3Tstudy</a>
+
+    <div class="left">
+    </div>
+
+    <div class="slideshow-container">
+        <!-- Slides -->
+        <div class="swiper-slide mySlides">
+                <span>Bước 1</span>
+                <header> Hãy chọn lớp mà bạn đang theo học: </header>
+                <div class="Grid">
+                    <label class="container">
+                        <input type="radio" name="info1">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/student.png' %}" alt="">
+                        <div>Lớp 10</div>
+                    </label>
+
+                    <label class="container">
+                        <input type="radio" name="info1">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/student.png' %}" alt="">
+                        <div>Lớp 11</div>
+                    </label>
+
+                    <label class="container">
+                        <input type="radio" name="info1">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/student.png' %}" alt="">
+                        <div>Lớp 12</div>
+                    </label>
+                </div>
+        </div>
+
+        <div class="swiper-slide mySlides">
+                <span>Bước 2</span>
+                <header>Lựa chọn môn học mà bạn muốn luyện tập: </header>
+
+                <div class="Grid">
+                    <label class="container">
+                        <input type="radio" name="info2">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/math.png' %}" alt="">
+                        <div>Toán Học</div>
+                    </label>
+                    <label class="container">
+                        <input type="radio" name="info2">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/english.png' %}" alt="">
+                        <div>Tiếng Anh</div>
+                    </label>
+                    <label class="container">
+                        <input type="radio" name="info2">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/physicaly.png' %}" alt="">
+                        <div>Vật Lí</div>
+                    </label>
+                    <label class="container">
+                        <input type="radio" name="info2">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/chemestry.png' %}" alt="">
+                        <div>Hóa Học</div>
+                    </label>
+                    <label class="container">
+                        <input type="radio" name="info2">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/biology.png' %}" alt="">
+                        <div>Sinh Học</div>
+                    </label>
+                    <label class="container">
+                        <input type="radio" name="info2">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/historical.png' %}" alt="">
+                        <div>Lịch Sử</div>
+                    </label>
+                </div>
+        </div>
+
+        <div class="swiper-slide mySlides">
+                <span>Bước 3</span>
+                <header>Bộ sách mà bạn đang theo học: </header>
+
+                <div class="Grid">
+                    <label class="container">
+                        <input type="radio" name="info3">
+                        <div class="checkmark"></div>
+                        <img src="{% static '/IMG/practice/kite.png' %}" alt="">
+                        <div>Cánh diều</div>
+                    </label>
+                    
+                    <label class="container">
+                        <input type="radio" name="info3">
+                        <div class="checkmark"></div>
+                        <img src="{% static '/IMG/practice/book.png' %}" alt="">
+                        <div>Kết nối tri thức</div>
+                    </label>
+                </div>
+        </div>
+
+        <div class="swiper-slide mySlides">
+                <span>Bước 4</span>
+                <header>Bạn muốn luyện tập chương nào: </header>
+
+                <div class="Grid">
+                    <label class="container">
+                        <input type="checkbox" name="info4" value="1">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/book.png' %}" alt="">
+                        <div>Chương 1</div>
+                    </label>
+                    <label class="container">
+                        <input type="checkbox" name="info4" value="2">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/book.png' %}" alt="">
+                        <div>Chương 2</div>
+                    </label>
+                    <label class="container">
+                        <input type="checkbox" name="info4" value="3">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/book.png' %}" alt="">
+                        <div>Chương 3</div>
+                    </label>
+                    <label class="container">
+                        <input type="checkbox" name="info4" value="4">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/book.png' %}" alt="">
+                        <div>Chương 4</div>
+                    </label>
+                    <label class="container">
+                        <input type="checkbox" name="info4" value="5">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/book.png' %}" alt="">
+                        <div>Chương 5</div>
+                    </label>
+                    <label class="container">
+                        <input type="checkbox" name="info4" value="6">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/book.png' %}" alt="">
+                        <div>Chương 6</div>
+                    </label>
+                    <label class="container">
+                        <input type="checkbox" name="info4" value="7">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/book.png' %}" alt="">
+                        <div>Chương 7</div>
+                    </label>
+                    <label class="container"> 
+                        <input type="radio" name="info5" value="1">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/book-2.png' %}" alt="">
+                        <div>Học kì I</div>
+                    </label>
+                    <label class="container">
+                        <input type="radio" name="info5" value="2">
+                        <div class="checkmark"></div>
+                        <img src="{% static 'IMG/practice/book-2.png' %}" alt="">
+                        <div>Học kì II</div>
+                    </label>
+                </div>
+
+                <script>
+                    var radios = document.querySelectorAll('input[name="info4"]');
+                    var checkboxes = document.querySelectorAll('input[name="info5"]');
+
+                    radios.forEach(function(radio) {
+                    radio.addEventListener('click', function() {
+                        if (this.checked) {
+                        checkboxes.forEach(function(checkbox) {
+                            checkbox.checked = false;
+                        });
+                        }
+                    });
+                    });
+
+                    checkboxes.forEach(function(checkbox) {
+                    checkbox.addEventListener('click', function() {
+                        if (this.checked) {
+                        radios.forEach(function(radio) {
+                            radio.checked = false;
+                        });
+                        }
+                    });
+                    });
+                </script>
+        </div>
+        <!-- Nếu cần pagination -->
+    
+        <a class="prev" onclick="plusSlides(-1)"><div>Quay lại</div></a>
+        <a class="next" onclick="plusSlides(1)"><div>Tiếp tục</div></a>
+        <span class="line"></span>
+    </div>
+    <div class="dot-btn" style="text-align:center">
+            <span class="dot" onclick="currentSlide(1)"><div-1 class="dot-dot dot1">1</div-1></span>
+            <div-1 class="linedot"></div-1>
+            <div-2 class="linedot"></div-2>
+            <span class="dot" onclick="currentSlide(2)"><div-2 class="dot-dot dot2">2</div-2></span>
+            <div-2 class="linedot"></div-2>
+            <div-3 class="linedot"></div-3>
+            <span class="dot" onclick="currentSlide(3)"><div-3 class="dot-dot dot3">3</div-3></span>
+            <div-3 class="linedot"></div-3>
+            <div-4 class="linedot"></div-4>
+            <span class="dot" onclick="currentSlide(4)"><div-4 class="dot-dot dot4">4</div-4></span>
+    </div>
+    <script src="{% static 'JS/practice.js' %}"></script>
+    </script>
+</body>
+</html>

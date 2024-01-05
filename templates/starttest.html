@@ -1,0 +1,63 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start</title>
+
+    <link rel="stylesheet" href="{% static 'CSS/starttest.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/fonts.css' %}">
+    <link rel="stylesheet" href="{% static 'JS/starttest.js' %}">
+</head>
+<body>
+    <a href="{% url 'landing' %}" class="webname">3Tstudy</a>
+
+    <header class="header">Đề kiểm tra giữa học kì 1</header>
+    <div class="teacher">Nguyễn Đức Hiền</div>
+    <div class="about">Đề kiểm tra giữa học kì 1 lớp 10 môn toán được biên soạn theo chương trình giáo dục phổ thông 2018 và bộ sách cánh diều của trường THPT Chuyên Đại học Vinh.</div>
+
+    <div class="subject">
+        <div class="chemestry element2">
+            <img src="{% static 'IMG/starttest/chemestry.png' %}" alt="">
+            Hóa Học
+        </div>
+
+        <div class="biology element1">
+            <img src="{% static 'IMG/starttest/biology.png' %}" alt="">
+            Sinh Học
+        </div>
+
+        <div class="math element ">
+            <img src="{% static 'IMG/starttest/math.png' %}" alt="">
+            Toán Học
+        </div>
+        
+        <div class="english element1">
+            <img src="{% static 'IMG/starttest/english.png' %}" alt="">
+            Tiếng Anh
+        </div>
+        
+        <div class="historic element2">
+            <img src="{% static 'IMG/starttest/historic.png' %}" alt="">
+            Sử học
+        </div>
+
+        <div class="blur b1"></div>
+        <div class="blur b2"></div>
+    </div>
+
+    <a href="{% url 'test' %}" class="start" >
+        <span class="circle" aria-hidden="true">
+        <span class="icon arrow"></span>
+        </span>
+        <span class="button-text">Learn More</span>
+    </a>
+
+    <div class="others">
+        Bạn muốn chọn đề khác..?
+        <a href="{% url 'library' %}">Ấn vào đây</a>
+    </div>
+</body>
+</html>

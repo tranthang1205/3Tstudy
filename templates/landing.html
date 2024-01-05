@@ -1,0 +1,261 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3Tstudy</title>
+    <!-- Link CSS -->
+    <link rel="stylesheet" href="{% static 'CSS/landing.css'%}?v=3">
+    <link rel="stylesheet" href="{% static 'CSS/fonts.css'%}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/resource/IMG/studying.png">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #F0ECE7;
+            box-sizing: border-box;
+            position: relative;
+        }
+    </style>
+    
+</head>
+<body>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init();
+        
+    </script>
+    <!-- ### about-top ### -->
+    <div class="about-top">
+        <!--nav-->
+        <nav>
+            <a href="{% url 'landing' %}">3Tstudy</a>
+            <div-2>
+                <div><a class="hover-underline-animation" id="a1" href="{% url 'landing' %}">Trang chủ</a></div>
+                <div><a class="hover-underline-animation" id="a1" href="{% url 'practice' %}">Luyện đề</a></div>
+                <div><a class="hover-underline-animation" id="a2" href="{% url 'library' %}">Thư viện</a></div>
+                <div><a class="hover-underline-animation" id="a2" href="">Bảng XH</a></div>
+            </div-2>
+            <div-3>
+                <a id="a1" href="">Login</a>
+                <a id="a2" href="">Sign Up</a>
+            </div-3>
+        </nav>
+
+        <!--left-->
+        <div class="left">
+            <div-1>
+                <div-2>
+                    <div id="t1">Luyện</div>
+                    <div id="t2">Đề</div>
+                </div-2>
+                <div-3>
+                    <div id="t2">Trắc</div>
+                    <div id="t1">Nghiệm</div>
+                </div-3>
+            </div-1>
+
+            <a href="{% url 'practice' %}" class="btn-conteiner">
+                <div class="btn-content">
+                  <span class="btn-title">Luyện tập ngay</span>
+                  <span class="icon-arrow">
+                    <svg width="56px" height="33px" viewBox="0 0 66 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                      <g id="arrow" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                        <path id="arrow-icon-one" d="M40.1543933,3.89485454 L43.9763149,0.139296592 C44.1708311,-0.0518420739 44.4826329,-0.0518571125 44.6771675,0.139262789 L65.6916134,20.7848311 C66.0855801,21.1718824 66.0911863,21.8050225 65.704135,22.1989893 C65.7000188,22.2031791 65.6958657,22.2073326 65.6916762,22.2114492 L44.677098,42.8607841 C44.4825957,43.0519059 44.1708242,43.0519358 43.9762853,42.8608513 L40.1545186,39.1069479 C39.9575152,38.9134427 39.9546793,38.5968729 40.1481845,38.3998695 C40.1502893,38.3977268 40.1524132,38.395603 40.1545562,38.3934985 L56.9937789,21.8567812 C57.1908028,21.6632968 57.193672,21.3467273 57.0001876,21.1497035 C56.9980647,21.1475418 56.9959223,21.1453995 56.9937605,21.1432767 L40.1545208,4.60825197 C39.9574869,4.41477773 39.9546013,4.09820839 40.1480756,3.90117456 C40.1501626,3.89904911 40.1522686,3.89694235 40.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                        <path id="arrow-icon-two" d="M20.1543933,3.89485454 L23.9763149,0.139296592 C24.1708311,-0.0518420739 24.4826329,-0.0518571125 24.6771675,0.139262789 L45.6916134,20.7848311 C46.0855801,21.1718824 46.0911863,21.8050225 45.704135,22.1989893 C45.7000188,22.2031791 45.6958657,22.2073326 45.6916762,22.2114492 L24.677098,42.8607841 C24.4825957,43.0519059 24.1708242,43.0519358 23.9762853,42.8608513 L20.1545186,39.1069479 C19.9575152,38.9134427 19.9546793,38.5968729 20.1481845,38.3998695 C20.1502893,38.3977268 20.1524132,38.395603 20.1545562,38.3934985 L36.9937789,21.8567812 C37.1908028,21.6632968 37.193672,21.3467273 37.0001876,21.1497035 C36.9980647,21.1475418 36.9959223,21.1453995 36.9937605,21.1432767 L20.1545208,4.60825197 C19.9574869,4.41477773 19.9546013,4.09820839 20.1480756,3.90117456 C20.1501626,3.89904911 20.1522686,3.89694235 20.1543933,3.89485454 Z" fill="#FFFFFF"></path>
+                        <path id="arrow-icon-three" d="M0.154393339,3.89485454 L3.97631488,0.139296592 C4.17083111,-0.0518420739 4.48263286,-0.0518571125 4.67716753,0.139262789 L25.6916134,20.7848311 C26.0855801,21.1718824 26.0911863,21.8050225 25.704135,22.1989893 C25.7000188,22.2031791 25.6958657,22.2073326 25.6916762,22.2114492 L4.67709797,42.8607841 C4.48259567,43.0519059 4.17082418,43.0519358 3.97628526,42.8608513 L0.154518591,39.1069479 C-0.0424848215,38.9134427 -0.0453206733,38.5968729 0.148184538,38.3998695 C0.150289256,38.3977268 0.152413239,38.395603 0.154556228,38.3934985 L16.9937789,21.8567812 C17.1908028,21.6632968 17.193672,21.3467273 17.0001876,21.1497035 C16.9980647,21.1475418 16.9959223,21.1453995 16.9937605,21.1432767 L0.15452076,4.60825197 C-0.0425130651,4.41477773 -0.0453986756,4.09820839 0.148075568,3.90117456 C0.150162624,3.89904911 0.152268631,3.89694235 0.154393339,3.89485454 Z" fill="#FFFFFF"></path>
+                      </g>
+                    </svg>
+                  </span> 
+                </div>
+            </a>
+
+
+            <div-4>
+                <div-5>
+                    <img src="{% static 'IMG/landing/uy-tin.png'%}" alt="">
+                    <header>Uy Tín</header>
+                    <about>Hệ thống bài tập và bài giảng được biên soạn từ các thầy, cô tại trường THPT Chuyên ĐHV.</about>
+                </div-5>
+                <div-5>
+                    <img src="{% static 'IMG/landing/chon-loc.png'%}" alt="">
+                    <header>Chọn Lọc</header>
+                    <about>Đề ôn luyện được chắt lọc từ các bài tập sát với chương trình học.</about>
+                </div-5>
+                <div-5>
+                    <img src="{% static 'IMG/landing/day-du.png'%}" alt="">
+                    <header>Đầy đủ</header>
+                    <about>Kiến thước trải dài cả ba năm trung học theo chương trình giáo dục phổ thông năm 2018.</about>
+                </div-5>
+            </div-4>
+        </div>
+
+        <!--right-->
+        <div class="right">
+            
+        </div>
+    </div>
+
+    <!-- ### about-mid ### -->
+
+    <!-- #1 about-us -->
+    <div class="about-us">
+        <!--left-->
+        <div class="left" data-aos="fade-right">
+            <img id="i1" src="{% static 'IMG/landing/aboutus-1.png'%}" alt="">
+            <img id="i2" src="{% static 'IMG/landing/aboutus-2.png'%}" alt="">
+            <img id="i2" src="{% static 'IMG/landing/aboutus-3.png'%}" alt="">
+        </div>
+        <!--right-->
+        <div class="right" data-aos="fade-left">
+            <div-1>
+                <span></span>
+                <div>3Tstudy</div>
+            </div-1>
+            <div-2>
+                <header-1>Về </header-1>
+                <header-2>Chúng Tôi !</header-2>
+            </div-2>
+            <div-3>Chúng tôi tạo ra trang web này với mong muốn giúp các bạn học sinh có thể tự luyện đề trước những kì thi quan trọng tại nhà. Với hệ thống bài tập đầy đủ cũng như phần lời giải có độ chính xác cao, chúng tôi tin rằng 3Tstudy sẽ mang đến nhiều điểm 10 dành cho các bạn.</div-3>
+            <button class="button1 type1"></button>
+        </div>
+    </div>
+
+    <!-- #2 Famous lecture -->
+    <div class="famous-lecture" data-aos="fade-up" data-aos-anchor-placement="center-bottom">
+        <div-0>
+            <span id="s1"></span>
+            <div>Famous lecture</div>
+        </div-0>
+        <div-1>
+            <header-1>Một Số</header-1>
+            <header-2>Bài Giảng</header-2>
+            <header-3>Nổi Tiếng</header-3>
+        </div-1>
+        <div-2>Hãy tham gia vào lớp học ngay thôi nào, nguồn nguyên liệu phong phú trên sẽ là hành trang rất tốt.</div-2>
+        
+        <!--SLIDE-->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <a class="element" href="">
+                    <img src="{% static 'IMG/landing/famous-lecture.png' %}" alt="">
+                    <title-1>IT</title-1>
+                    <header>DP mảng 1 chiều</header>
+                    <about>Bài toán Fibonacci là ví dụ điển hình của thuật toán quy hoạch động (DP)</about>
+                    <!-- rate here -->
+        
+                    <!-- Tác giả -->
+                    <div-1>
+                        <img src="{% static 'IMG/landing/element.png' %}" alt="">
+                        <div-3>
+                            <name>Toàn Khánh</name>
+                            <date>23 - 9 - 2023</date>
+                        </div-3>
+                    </div-1>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="element" href="">
+                    <img src="{% static 'IMG/landing/famous-lecture.png' %}" alt="">
+                    <title-1>IT</title-1>
+                    <header>DP mảng 1 chiều</header>
+                    <about>Bài toán Fibonacci là ví dụ điển hình của thuật toán quy hoạch động (DP)</about>
+                    <!-- rate here -->
+        
+                    <!-- Tác giả -->
+                    <div-1>
+                        <img src="{% static 'IMG/landing/element.png' %}" alt="">
+                        <div-3>
+                            <name>Toàn Khánh</name>
+                            <date>23 - 9 - 2023</date>
+                        </div-3>
+                    </div-1>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="element" href="">
+                    <img src="{% static 'IMG/landing/famous-lecture.png' %}" alt="">
+                    <title-1>IT</title-1>
+                    <header>DP mảng 1 chiều</header>
+                    <about>Bài toán Fibonacci là ví dụ điển hình của thuật toán quy hoạch động (DP)</about>
+                    <!-- rate here -->
+        
+                    <!-- Tác giả -->
+                    <div-1>
+                        <img src="{% static 'IMG/landing/element.png'%}" alt="">
+                        <div-3>
+                            <name>Toàn Khánh</name>
+                            <date>23 - 9 - 2023</date>
+                        </div-3>
+                    </div-1>
+                </a>
+              </div>
+              <div class="swiper-slide">
+                <a class="element" href="">
+                    <img src="{% static 'IMG/landing/famous-lecture.png' %}" alt="">
+                    <title-1>IT</title-1>
+                    <header>DP mảng 1 chiều</header>
+                    <about>Bài toán Fibonacci là ví dụ điển hình của thuật toán quy hoạch động (DP)</about>
+                    <!-- rate here -->
+        
+                    <!-- Tác giả -->
+                    <div-1>
+                        <img src="{% static 'IMG/landing/element.png' %}" alt="">
+                        <div-3>
+                            <name>Toàn Khánh</name>
+                            <date>23 - 9 - 2023</date>
+                        </div-3>
+                    </div-1>
+                </a>
+              </div>
+            </div>
+            
+            <div class="swiper-pagination"></div>
+          </div>
+  
+          <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+          <script src="{% static '/JS/landing.js' %}"></script>
+    </div>
+
+    <!-- #3 Trắc nghiệm thông minh -->
+    <div class="more-infor">
+        <header data-aos="zoom-out-right">
+            <div-1>Trắc nghiệm </div-1>
+            <div-2>Thông Minh</div-2>
+        </header>
+        <span data-aos="zoom-out-left">Hãy tham gia vào lớp học ngay thôi nào, nguồn nguyên liệu phong phú trên sẽ là hành trang rất tốt.</span>
+
+        <div-3>
+            <div class="infor-element" data-aos="fade-up-right">
+                <img id="i1" src="{% static 'IMG/landing/Ellipse 6.png' %}" alt="">
+                <img id="i2" src="{% static 'IMG/landing/Vector-1.svg' %}" alt="">
+                <header>Kho tàng Thư viện khổng lồ</header>
+                <about>Cung cấp đa dạng nội dung các câu hỏi trắc nghiệm thuộc nhiều lĩnh vực khác nhau</about>
+            </div>
+            <div class="infor-element" data-aos="zoom-out-up">
+                <img id="i1" src="{% static 'IMG/landing/Ellipse 7.png' %}" alt="">
+                <img id="i2" src="{% static 'IMG/landing/Vector-2.svg' %}" alt="">
+                <header>Sử dụng AI tiện ích</header>
+                <about>Hệ thống sẽ dựa vào ma trận câu hỏi phong phú để tự tổng hợp thành đề trắc nghiệm</about>
+            </div>
+            <div class="infor-element" data-aos="fade-up-left">
+                <img id="i1" src="{% static 'IMG/landing/Ellipse 8.png' %}" alt="">
+                <img id="i2" src="{% static 'IMG/landing/Vector-3.svg' %}" alt="">
+                <header>Hoàn thành & Lên cấp</header>
+                <about>Hãy tham gia vào lớp học ngay thôi nào, nguồn nguyên liệu phong phú trên sẽ là hành trang rất tốt.</about>
+            </div>
+        </div-3>
+    </div>
+
+    <!-- ### Nav-bottom ### -->
+    <div class="nav-bot">@  A3k56  |  VinhUniversity High School</div>
+
+    <!-- ### Popups ### -->
+</body>
+</html>

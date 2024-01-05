@@ -1,0 +1,370 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thư viện</title>
+    <link rel="stylesheet" href="{% static 'CSS/library.css' %}">
+    <link rel="stylesheet" href="{% static 'CSS/fonts.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="shortcut icon" href="{% static 'IMG/studying.png' %}">
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            background-color: #EDEEF2;
+            display: flex;
+            gap: 4px;
+        }
+    </style>
+</head>
+<body>    
+    <div id="bg">
+        <div class="popups">
+            <header-1>
+                <div-1>Chọn lọc đề thi</div-1>
+                <div-2>Chọn ra những đề thi mà bạn quan tâm</div-2>
+                <span></span>
+            </header-1>
+            <div class="pfilter">
+                <div class="ptop">
+                    <div class="pdrop">
+                        <div>Môn học</div>
+                        <select class="pdropbtn" id="subjects">
+                            <img src="{% static 'IMG/library/btndropdown.png' %}" alt="">
+                            <option class="pdr" value="Tất cả">Tất cả</option>
+                            <option class="pdr" value="Toán">Toán Học</option>
+                            <option class="pdr" value="Ngữ Văn">Ngữ Văn</option>
+                            <option class="pdr" value="Tiếng Anh">Tiếng Anh</option>
+                            <option class="pdr" value="Vật Lí">Vật Lí</option>
+                            <option class="pdr" value="Hóa Học">Hóa Học</option>
+                            <option class="pdr" value="Sinh Học">Sinh Học</option>
+                        </select>
+                    </div>
+                    <div class="pdrop">
+                        <div>Lớp học</div>
+                        <select class="pdropbtn" id="grades">
+                            <img src="{% static 'IMG/library/btndropdown.png' %}" alt="">
+                            <option class="pdr" value="Tất cả">Tất cả</option>
+                            <option class="pdr" value="10">Lớp 10</option>
+                            <option class="pdr" value="11">Lớp 11</option>
+                            <option class="pdr" value="12">Lớp 12</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="pbot">
+                    <div class="pdrop" class="bosach">
+                        <div>Bộ sách</div>
+                        <select class="pdropbtn" id="books">
+                            <img src="{% static 'IMG/library/btndropdown.png' %}" alt="">
+                            <option class="pdr" value="Tất cả">Tất cả</option>
+                            <option class="pdr" value="Cánh Diều">Cánh Diều</option>
+                            <option class="pdr" value="Kết Nối Tri Thức">Kết Nối Tri Thức</option>
+                        </select>
+                    </div>
+                </div>
+        
+                <div class="table-filter" id="totalSelection">
+                    <span>
+                        <div id="total1"></div>
+                        <div id="total2"></div>
+                        <div id="total3"></div>
+                    </span>
+                </div>
+                
+            </div>
+            <div class="close">
+                <div-1>Lọc ra</div-1>
+                <div-2 id="btn-close">Đóng</div-2>
+            </div>
+        </div>
+    </div>
+    <!-- ### LEFT ### -->
+    <div class="left">
+        <a class="link" href="{% url 'landing' %}">3Tstudy</a>
+        <div-2>
+            <a href="{% url 'landing' %}">
+                <img src="{% static 'IMG/library/trangchu.png' %}" alt="">
+                <div>Trang chủ</div>
+            </a>
+            <a href="/template/practice.html">
+                <img src="{% static 'IMG/library/luyende.png' %}" alt="">
+                <div>Luyện đề</div>
+            </a>
+            <a href="" id="thuvien">
+                <img src="{% static 'IMG/library/thuvien.png' %}" alt="">
+                <div>Thư viện</div>
+            </a>
+            <a href="">
+                <img src="{% static 'IMG/library/bangxh.png' %}" alt="">
+                <div>Bảng XH</div>
+            </a>
+        </div-2>
+    </div>
+
+    <!-- ### RIGHT ### -->
+    <div class="right">
+
+        <div class="top">
+            <a id="a1" href="">Login</a>
+            <a id="a2" href="">Sign Up</a>
+        </div>
+
+        <!-- ------------- MAIN ----------- -->
+        <div class="main">
+            <header-1>Thư Viện</header-1>
+            <div class="Search">
+                <!-- search -->
+                <form class="form">
+                    <label for="search">
+                        <input required="" autocomplete="off" placeholder="Tìm kiếm đề ..." id="search" type="text">
+                        <div class="icon">
+                            <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-on">
+                                <path d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" stroke-linejoin="round" stroke-linecap="round"></path>
+                            </svg>
+                            <svg stroke-width="2" stroke="currentColor" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" class="swap-off">
+                                <path d="M10 19l-7-7m0 0l7-7m-7 7h18" stroke-linejoin="round" stroke-linecap="round"></path>
+                            </svg>
+                        </div>
+                    </label>
+                </form>
+                <!-- filter -->
+                <button type="button" class="button" id="btn-open">
+                    <span class="button__text">Lọc</span>
+                    <span class="button__icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" viewBox="0 0 24 24" stroke-width="2" stroke-linejoin="round" stroke-linecap="round" stroke="currentColor" height="24" fill="none" class="svg"><line y2="19" y1="5" x2="12" x1="12"></line><line y2="12" y1="12" x2="19" x1="5"></line></svg></span>
+                </button>
+            </div>
+            <div class="library">
+                <header-2>
+                    <div-1>
+                        <div id="d1">Tìm thấy</div>
+                        <div id="d2"></div>
+                        <div id="d1">mục liên quan</div>
+                    </div-1>
+                    <div-2 class="filter-element">
+                        <div-12>
+                            Sắp xếp theo:
+                            <button onclick="Dropdown1()" class="dropbtn">Tất cả</button>
+                        </div-12>
+                        <div class="drop-content" id="dropcontent">
+                            <button class="dr">Tất cả</button>
+                            <button class="dr">Chưa làm</button>
+                            <button class="dr">Đã làm</button>
+                        </div>
+                    </div-2>
+                </header-2>
+                
+                <div class="lib">
+                    <a href="{% url 'starttest' %}" class="element">
+                        <div>
+                            <div-1>
+                                <img src="{% static 'IMG/library/math.png' %}" alt="">
+                            </div-1>
+                            <div-2>
+                                <div-3>
+                                    <div-4>
+                                        Đề kiểm tra giữa học kì 1 - Lớp 10 - Cánh diều
+                                    </div-4>
+                                    <div-5>
+                                        Toán
+                                    </div-5>
+                                </div-3>
+                                <div-6>Nguyễn Đức Hiền</div-6>
+                            </div-2>
+                        </div>
+                        <div-7>
+                            <div-8>NĂM HỌC</div-8>
+                            <div-9>2023 - 2024</div-9>
+                        </div-7>
+                    </a>
+
+                    <a href="" class="element">
+                        <div>
+                            <div-1>
+                                <img src="{% static 'IMG/library/math.png' %}" alt="">
+                            </div-1>
+                            <div-2>
+                                <div-3>
+                                    <div-4>
+                                        Đề ôn tập giữa học kì 1 - Lớp 10 - Cánh diều - Đề 1
+                                    </div-4>
+                                    <div-5>
+                                        Toán
+                                    </div-5>
+                                </div-3>
+                                <div-6>Nguyễn Đức Hiền</div-6>
+                            </div-2>
+                        </div>
+                        <div-7>
+                            <div-8>NĂM HỌC</div-8>
+                            <div-9>2023 - 2024</div-9>
+                        </div-7>
+                    </a>
+
+                    <a href="" class="element">
+                        <div>
+                            <div-1>
+                                <img src="{% static 'IMG/library/english.png' %}" alt="">
+                            </div-1>
+                            <div-2>
+                                <div-3>
+                                    <div-4>
+                                        Đề kiểm tra Tiếng Anh học kì 2 - Lớp 10 - Global Success
+                                    </div-4>
+                                    <div-5>
+                                        Toán
+                                    </div-5>
+                                </div-3>
+                                <div-6>Nguyễn Đức Hiền</div-6>
+                            </div-2>
+                        </div>
+                        <div-7>
+                            <div-8>NĂM HỌC</div-8>
+                            <div-9>2023 - 2024</div-9>
+                        </div-7>
+                    </a>
+
+                    <a href="" class="element">
+                        <div>
+                            <div-1>
+                                <img src="{% static 'IMG/library/history.png' %}" alt="">
+                            </div-1>
+                            <div-2>
+                                <div-3>
+                                    <div-4>
+                                        Môn Toán
+                                    </div-4>
+                                    <div-5>
+                                        Toán
+                                    </div-5>
+                                </div-3>
+                                <div-6>Nguyễn Đức Hiền</div-6>
+                            </div-2>
+                        </div>
+                        <div-7>
+                            <div-8>NĂM HỌC</div-8>
+                            <div-9>2023 - 2024</div-9>
+                        </div-7>
+                    </a>
+
+                    <a href="" class="element">
+                        <div>
+                            <div-1>
+                                <img src="{% static 'IMG/library/physic.png' %}" alt="">
+                            </div-1>
+                            <div-2>
+                                <div-3>
+                                    <div-4>
+                                        Môn Toán
+                                    </div-4>
+                                    <div-5>
+                                        Toán
+                                    </div-5>
+                                </div-3>
+                                <div-6>Nguyễn Đức Hiền</div-6>
+                            </div-2>
+                        </div>
+                        <div-7>
+                            <div-8>NĂM HỌC</div-8>
+                            <div-9>2023 - 2024</div-9>
+                        </div-7>
+                    </a>
+
+                    <a href="" class="element">
+                        <div>
+                            <div-1>
+                                <img src="{% static 'IMG/library/biology.png' %}" alt="">
+                            </div-1>
+                            <div-2>
+                                <div-3>
+                                    <div-4>
+                                        Môn Toán
+                                    </div-4>
+                                    <div-5>
+                                        Toán
+                                    </div-5>
+                                </div-3>
+                                <div-6>Nguyễn Đức Hiền</div-6>
+                            </div-2>
+                        </div>
+                        <div-7>
+                            <div-8>NĂM HỌC</div-8>
+                            <div-9>2023 - 2024</div-9>
+                        </div-7>
+                    </a>
+
+                    <a href="" class="element">
+                        <div>
+                            <div-1>
+                                <img src="{% static 'IMG/library/chemistry.png' %}" alt="">
+                            </div-1>
+                            <div-2>
+                                <div-3>
+                                    <div-4>
+                                        Môn Toán
+                                    </div-4>
+                                    <div-5>
+                                        Toán
+                                    </div-5>
+                                </div-3>
+                                <div-6>Nguyễn Đức Hiền</div-6>
+                            </div-2>
+                        </div>
+                        <div-7>
+                            <div-8>NĂM HỌC</div-8>
+                            <div-9>2023 - 2024</div-9>
+                        </div-7>
+                    </a>
+
+                    <a href="" class="element">
+                        <div>
+                            <div-1>
+                                <img src="{% static 'IMG/library/math.png' %}" alt="">
+                            </div-1>
+                            <div-2>
+                                <div-3>
+                                    <div-4>
+                                        Môn Toán
+                                    </div-4>
+                                    <div-5>
+                                        Toán
+                                    </div-5>
+                                </div-3>
+                                <div-6>Nguyễn Đức Hiền</div-6>
+                            </div-2>
+                        </div>
+                        <div-7>
+                            <div-8>NĂM HỌC</div-8>
+                            <div-9>2023 - 2024</div-9>
+                        </div-7>
+                    </a>
+                </div>
+            </div>
+
+            <div id="loadmore">
+                <button class="buttonsm"> 
+                    Load more
+                </button>
+            </div>
+            <script src="{% static '/JS/library.js' %}"></script>
+        </div>
+    </div>
+
+    
+    <script>
+        const btn_open = document.getElementById('btn-open');
+        const btn_close = document.getElementById('btn-close');
+        const bg = document.getElementById('bg');
+        btn_open.addEventListener('click', () => {
+            //SHOW
+            bg.classList.add('show');
+        });
+        btn_close.addEventListener('click', () => {
+            //HIDE
+            bg.classList.remove('show');
+        });  
+    </script>
+</body>
+</html>
